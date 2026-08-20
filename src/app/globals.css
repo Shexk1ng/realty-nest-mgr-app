@@ -1,0 +1,27 @@
+/* Zbiera arkusze stylów aplikacji i mostkuje zmienne akcentu HeroUI na własny system kolorów */
+
+@import "@heroui/styles";
+@import "../styles/base.css";
+@import "../styles/landing.css";
+@import "../styles/dashboard.css";
+@import "../styles/table.css";
+@import "../styles/heroui-bridge.css";
+
+:root,
+.light,
+[data-theme="light"] {
+  --accent-foreground: var(--accent-ink);
+  --accent-hover:      color-mix(in oklch, var(--accent) 88%, var(--accent-ink) 12%);
+  --default:           var(--surface-hi);
+  --default-foreground: var(--text);
+  --default-hover:     var(--surface-2);
+}
+
+.dark,
+[data-theme="dark"] {
+  --accent-foreground: var(--accent-ink);
+  --accent-hover:      color-mix(in oklch, var(--accent) 88%, var(--accent-ink) 12%);
+  --default:           var(--surface-hi);
+  --default-foreground: var(--text);
+  --default-hover:     var(--surface-2);
+}

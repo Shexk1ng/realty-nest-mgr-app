@@ -1,0 +1,172 @@
+/* Klasy pomocnicze stron marketingowych, w tym nagłówek leżący na ciemnym zdjęciu hero */
+
+@utility section-surface-default {
+  border-bottom-width: 1px;
+  border-bottom-color: color-mix(in oklch, var(--color-border) 60%, transparent);
+  background-color: var(--color-background);
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  @media (width >= 40rem) {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+@utility section-surface-muted {
+  border-bottom-width: 1px;
+  border-bottom-color: color-mix(in oklch, var(--color-border) 60%, transparent);
+  background-color: color-mix(in oklch, var(--color-muted) 55%, var(--color-background));
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  @media (width >= 40rem) {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+@utility section-surface-contrast {
+  border-bottom-width: 1px;
+  border-bottom-color: color-mix(in oklch, var(--color-border) 60%, transparent);
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-image: linear-gradient(
+    to bottom,
+    color-mix(in oklch, var(--color-muted) 50%, transparent),
+    var(--color-background),
+    var(--color-background)
+  );
+  @media (width >= 40rem) {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+@utility section-inner {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 72rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  @media (width >= 40rem) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@utility card-surface {
+  border-radius: var(--radius-2xl);
+  border-width: 1px;
+  border-color: color-mix(in oklch, var(--color-border) 80%, transparent);
+  background-color: var(--color-card);
+  box-shadow: var(--shadow-card);
+}
+
+@utility badge-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  border-width: 1px;
+  border-color: color-mix(in oklch, var(--color-border) 80%, transparent);
+  background-color: var(--color-card);
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 500;
+  color: var(--color-foreground);
+  box-shadow: var(--shadow-xs);
+}
+
+@utility grid-subtle {
+  background-image:
+    linear-gradient(to right, color-mix(in oklch, var(--color-border) 60%, transparent) 1px, transparent 1px),
+    linear-gradient(color-mix(in oklch, var(--color-border) 60%, transparent) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+@utility landing-section-title {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: var(--color-foreground);
+  @media (width >= 40rem) {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+@utility landing-hero-title {
+  font-size: 2.25rem;
+  line-height: 1.15;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--color-foreground);
+  @media (width >= 40rem) {
+    font-size: 3rem;
+  }
+  @media (width >= 48rem) {
+    font-size: 3.5rem;
+  }
+}
+
+@utility input-base {
+  display: flex;
+  height: 2.5rem;
+  width: 100%;
+  border-radius: var(--radius-md);
+  border-width: 1px;
+  border-color: var(--color-input);
+  background-color: var(--color-card);
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--color-foreground);
+  transition-property: border-color, box-shadow;
+  transition-duration: var(--duration-fast);
+  &::placeholder { color: var(--color-muted-foreground); }
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-background), 0 0 0 4px var(--color-ring);
+  }
+  &:disabled { cursor: not-allowed; opacity: 0.5; }
+}
+
+.rn-header-overlay .toggle-button-group {
+  border-radius: 9999px;
+  border-width: 1px;
+  border-style: solid;
+  overflow: hidden;
+  background-color: color-mix(in oklab, var(--color-foreground) 12%, transparent);
+  border-color: color-mix(in oklab, var(--color-foreground) 22%, transparent);
+}
+
+.rn-header-overlay .toggle-button {
+  --default: transparent;
+  --default-hover: color-mix(in oklab, var(--color-foreground) 14%, transparent);
+  --accent-soft: var(--color-foreground);
+  --accent-soft-hover: var(--color-foreground);
+  --accent-soft-foreground: var(--color-background);
+}
+
+.rn-header-overlay .toggle-button:not([data-selected="true"]) {
+  color: color-mix(in oklab, var(--color-foreground) 72%, transparent);
+}
+
+.rn-header-overlay .toggle-button:not([data-selected="true"]):hover {
+  color: var(--color-foreground);
+}
+
+.rn-header-overlay .button--ghost {
+  color: color-mix(in oklab, var(--color-foreground) 86%, transparent);
+}
+
+.rn-header-overlay .button--ghost:hover {
+  background-color: color-mix(in oklab, var(--color-foreground) 12%, transparent);
+  color: var(--color-foreground);
+}

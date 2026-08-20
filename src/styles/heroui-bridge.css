@@ -1,0 +1,78 @@
+/* Mostek tokenów HeroUI na tokeny aplikacji, usuwa kolizję znaczenia zmiennej --muted */
+
+:root {
+  --segment: var(--surface);
+  --segment-foreground: var(--text);
+  --field-placeholder: var(--text-4);
+}
+
+.dark {
+  --segment: var(--surface-2);
+  --segment-foreground: var(--text);
+}
+
+.accordion__body-inner,
+.accordion__indicator,
+.alert-dialog__body,
+.alert__description,
+.autocomplete__clear-button,
+.breadcrumbs .breadcrumbs__link,
+.breadcrumbs .breadcrumbs__separator,
+.calendar__cell-indicator,
+.calendar__cell[data-outside-month="true"],
+.calendar__header-cell,
+.card__description,
+.checkbox > .field-error,
+.checkbox > [data-slot="description"],
+.checkbox > [data-slot="field-error"],
+.close-button--default,
+.date-input-group__segment[data-type="literal"],
+.description,
+.drawer__body,
+.empty-state,
+.kbd,
+.menu-item__indicator,
+.menu-item__indicator--submenu,
+.modal__body,
+.pagination__ellipsis,
+.pagination__summary,
+.radio > .field-error,
+.radio > [data-slot="description"],
+.radio > [data-slot="field-error"],
+.range-calendar__cell-indicator,
+.range-calendar__cell[data-outside-month="true"],
+.range-calendar__header-cell,
+.separator__content,
+.switch > .field-error,
+.switch > [data-slot="field-error"],
+.tabs__separator,
+.tabs__tab,
+.toast__description,
+.typography--color-muted,
+.typography-prose blockquote {
+  color: var(--muted-foreground);
+}
+
+.tabs__tab[data-selected="true"] {
+  color: var(--foreground);
+}
+
+.input,
+.input-group,
+.text-area {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm, 10px);
+}
+.input:focus-within,
+.input-group:focus-within,
+.text-area:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--accent) 18%, transparent);
+}
+.input[data-disabled=true],
+.input-group[data-disabled=true],
+.input:has(input:disabled) {
+  background: var(--surface-hi);
+  color: var(--text-3);
+}
